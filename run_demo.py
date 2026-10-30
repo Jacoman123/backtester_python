@@ -49,8 +49,9 @@ def main() -> None:
     table = pd.DataFrame([summarise(r) for r in results]).set_index("Strategy")
     print("=== Main results (net of 3 bp costs, delay = 1) ===")
     print(table, "\n")
-    plot_results(results, title=f"{label}: strategies vs buy & hold (net of costs)", path="outputs/equity.png")
-    print("Saved outputs/equity.png\n")
+    out_path = "outputs/equity_synthetic.png" if args.synthetic else "outputs/equity.png"
+    plot_results(results, title=f"{label}: strategies vs buy & hold (net of costs)", path=out_path)
+    print(f"Saved {out_path}\n")
 
     # ---- 2. Look-ahead experiment: what does 'cheating' look like? ----
     print("=== Sharpe vs execution delay (0 = look-ahead bug) ===")
