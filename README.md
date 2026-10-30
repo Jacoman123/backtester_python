@@ -2,6 +2,8 @@
 
 A small, readable Python framework (pandas + NumPy) that runs trading strategies on historical prices and reports Sharpe ratio, drawdown and a PnL chart. The code is quite simple. 
 
+![SPY 2010-2024: strategies vs buy & hold, net of costs](outputs/equity.png)
+
 ## Quickstart
 
 ```bash
